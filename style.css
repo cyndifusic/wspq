@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'A-OTF Shin Go Pro DB';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/AOTFShinGoProDeBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'A-OTF Shin Go Pro L';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/AOTFShinGoProLight.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'A-OTF Shin Go Pro R';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/AOTFShinGoProRegular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'A-OTF Shin Go Pro M';
+    font-style: normal;
+    font-weight: normal;
+    src: url('fonts/AOTFShinGoProMedium.woff') format('woff');
+}
+
+body:not(#navbar):not(span):not(#bottomtext):not(.heading) {
+    font-family: 'A-OTF Shin Go Pro R';
+    background-color: #366bdd;
+}
+
+#bottomtext {
+    font-family: 'A-OTF Shin Go Pro L';
+    color: rgb(150, 150, 150);
+}
+
+span, .heading {
+    font-family: 'A-OTF Shin Go Pro DB';
+}
+
+.heading {
+    font-weight: normal;
+}
+
+h1 {
+    font-family: 'A-OTF Shin Go Pro DB';
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 3px 3px rgb(50, 50, 50);
+    letter-spacing: 0.1em;
+}
+
+#navbar {
+    background-color: #5a82d8;
+}
+
+#navbarrow td {
+    font-family: 'A-OTF Shin Go Pro DB';
+    letter-spacing: 0.1em;
+    font-size: 18px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    transition: letter-spacing 0.2s;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#navbarrow td:hover {
+    font-family: 'A-OTF Shin Go Pro DB';
+    letter-spacing: 0.2em;
+    font-size: 18px;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+    transition: letter-spacing 0.2s;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+#container {
+    margin: 0 auto;
+    width: 700px;
+    line-height: 120%;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 6px;
+    border-color: #5a82d8;
+    border-radius: 20px;
+}
+
+a {
+    color: #5a82d8;
+    filter: brightness(1.0);
+}
+
+a:hover {
+    color: #5a82d8;
+    filter: brightness(0.85);
+}
+
+#navbarrow td a {
+    color: #5a82d8;
+    filter: brightness(1.0);
+}
+
+#navbarrow td a:hover {
+    color: #5a82d8;
+    filter: brightness(0.85);
+}
+
+#navbar:not(h1) {
+    padding: 20px;
+    padding-top: 1px;
+    background-color: #5a82d8;
+    color: #ffffff;
+}
+
+#content {
+    padding: 20px;
+    padding-top: 10px;
+    color: rgb(50, 50, 50);
+}
+
+#specialthanks {
+    background-color: rgb(235, 235, 235);
+    border-radius: 15px;
+    padding: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+ul {
+    margin-bottom: 5px;
+}
+
+#return {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #f5a23d;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s;
+    transition: letter-spacing 0.2s;
+}
+
+#return:hover {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #f5a23d;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.2em;
+    transition: background-color 0.2s;
+    transition: letter-spacing 0.2s;
+}
+
+#return a {
+    color: #ffffff;
+    font-family: 'A-OTF Shin Go Pro DB';
+    font-size: 24px;
+}

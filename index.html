@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>Wii Series Personality Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="navbar">
+            <h1>Which Wii Series Game Are You?</h1>
+        </div>
+        <div id="content">
+
+            <p>Which game from the Wii Series matches your personality best? Take this brief quiz to find out. Answer each question with a letter A, B, C, or D (uppercase or lowercase), but ensure that no spaces or other characters are typed into the boxes.</p>
+
+            <h2>Question 1</h2>
+
+            <span>Which activity sounds the most fun to you?</span>
+            <ol type="a">
+                <li>Going for a run</li>
+                <li>Playing air hockey</li>
+                <li>Going to the bowling alley</li>
+                <li>Strumming a guitar</li>
+            </ol>
+            <input id="q1"></input>
+
+            <h2>Question 2</h2>
+
+            <span>How would you describe your social status?</span>
+            <ol type="a">
+                <li>Everyone knows me, and they're all nice to me</li>
+                <li>Everyone knows me, but no one likes me</li>
+                <li>Not everyone knows me, but the ones who do like me</li>
+                <li>Nobody knows that I exist</li>
+            </ol>
+            <input id="q2"></input>
+
+            <h2>Question 3</h2>
+
+            <span>Do you value yourself?</span>
+            <ol type="a">
+                <li>No, not at all</li>
+                <li>Somewhat, but not much</li>
+                <li>Yes, moderately</li>
+                <li>I value myself highly</li>
+            </ol>
+            <input id="q3"></input>
+
+            <h2>Question 4</h2>
+
+            <span>How do you do things quickly?</span>
+            <ol type="a">
+                <li>Hard work</li>
+                <li>Getting lucky</li>
+                <li>Failing instantly</li>
+                <li>Waiting for things to happen</li>
+            </ol>
+            <input id="q4"></input>
+
+            <h2>Question 5</h2>
+
+            <span>Which of the four seasons best fits your favorite song?</span>
+            <ol type="a">
+                <li>Spring</li>
+                <li>Summer</li>
+                <li>Autumn</li>
+                <li>Winter</li>
+            </ol>
+            <input id="q5"></input>
+
+            <br><br><button id="submitquiz">Submit</button>
+
+            <br><p id="results">Results:<br><br></p>
+        </div>
+
+    </div>
+    <div id="return">
+        <a href="../index.html">↩ return to homepage</a>
+    </div>
+    <script>
+        var submitbutton = document.getElementById("submitquiz");
+        var results = document.getElementById("results");
+        var validanswers = ["a", "b", "c", "d"];
+        var order = [];
+        var ogws = 0;
+        var resort = 0;
+        var play = 0;
+        var motion = 0;
+        var party = 0;
+        var wfp = 0;
+        var music = 0;
+        var chess = 0;
+
+        var outputError = function(c) {
+            results.style.color = "red";
+            results.innerHTML = c;
+        }
+
+        var calculateResults = function() {
+
+            var a1 = document.getElementById("q1").value;
+            var a2 = document.getElementById("q2").value;
+            var a3 = document.getElementById("q3").value;
+            var a4 = document.getElementById("q4").value;
+            var a5 = document.getElementById("q5").value;
+
+            if (validanswers.includes(a1) && validanswers.includes(a2) && validanswers.includes(a3) && validanswers.includes(a4) && validanswers.includes(a5) ) {
+
+                console.log("wii made it");
+
+                if (a1 == "a") {
+                    wfp++;
+                }
+                if (a1 == "b") {
+                    motion++;
+                }
+                if (a1 == "c") {
+                    ogws++;
+                    resort++;
+                }
+                if (a1 == "d") {
+                    music++;
+                }
+
+                if (a2 == "a") {
+                    ogws++;
+                }
+                if (a2 == "b") {
+                    play++;
+                    music++;
+                }
+                if (a2 == "c") {
+                    resort++;
+                    party++;
+                }
+                if (a2 == "d") {
+                    motion++;
+                    chess++;
+                }
+
+                if (a3 == "a") {
+                    ogws++;
+                }
+                if (a3 == "b") {
+                    play++;
+                    motion++;
+                    chess++;
+                }
+                if (a3 == "c") {
+                    resort++;
+                    music++;
+                    party++;
+                }
+                if (a3 == "d") {
+                    wfp++;
+                }
+
+                if (a4 == "a") {
+                    ogws++;
+                    resort++;
+                }
+                if (a4 == "b") {
+                    play++;
+                    party++;
+                    chess++;
+                }
+                if (a4 == "c") {
+                    play++;
+                    wfp++;
+                    party++;
+                }
+                if (a4 == "d") {
+                    play++;
+                    wfp++;
+                    motion++;
+                    music++;
+                }
+
+                if (a5 == "a") {
+                    motion++;
+                    wfp++;
+                }
+                if (a5 == "b") {
+                    ogws++;
+                    resort++;
+                    play++;
+                }
+                if (a5 == "c") {
+                    music++;
+                    party++;
+                }
+                if (a5 == "d") {
+                    chess++;
+                }
+
+                var ogwsORDER = ogws.toString() + "Wii Sports: ";
+                var resortORDER = resort.toString() + "Wii Sports Resort: ";
+                var playORDER = play.toString() + "Wii Play: ";
+                var motionORDER = motion.toString() + "Wii Play Motion: ";
+                var partyORDER = party.toString() + "Wii Party: ";
+                var wfpORDER = wfp.toString() + "Wii Fit Plus: ";
+                var musicORDER = music.toString() + "Wii Music: ";
+                var chessORDER = chess.toString() + "Wii Chess: ";
+                order.push(ogwsORDER, resortORDER, playORDER, motionORDER, partyORDER, wfpORDER, musicORDER, chessORDER);
+                order.sort();
+                order.reverse();
+
+                results.style.color = "black";
+                var comb = Number(order[0].charAt(0)) + Number(order[1].charAt(0)) + Number(order[2].charAt(0)) + Number(order[3].charAt(0)) + Number(order[4].charAt(0)) + Number(order[5].charAt(0)) + Number(order[6].charAt(0)) + Number(order[7].charAt(0));
+
+                results.innerHTML = "Results:<br><br>"
+                results.innerHTML += order[0].slice(1, order[0].length) + Math.round((Number(order[0].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[1].slice(1, order[1].length) + Math.round((Number(order[1].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[2].slice(1, order[2].length) + Math.round((Number(order[2].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[3].slice(1, order[3].length) + Math.round((Number(order[3].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[4].slice(1, order[4].length) + Math.round((Number(order[4].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[5].slice(1, order[5].length) + Math.round((Number(order[5].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[6].slice(1, order[6].length) + Math.round((Number(order[6].charAt(0)) / comb) * 100) + "%<br>";
+                results.innerHTML += order[7].slice(1, order[7].length) + Math.round((Number(order[7].charAt(0)) / comb) * 100) + "%<br>";
+                console.log("wii made it 2");
+
+            } else {
+                outputError("Input is invalid, please see note at top of page");
+            }
+        }
+
+        submitbutton.addEventListener("click", calculateResults);
+    </script>
+</body>
+
+</html>
