@@ -100,11 +100,11 @@
 
         var calculateResults = function() {
 
-            var a1 = document.getElementById("q1").value;
-            var a2 = document.getElementById("q2").value;
-            var a3 = document.getElementById("q3").value;
-            var a4 = document.getElementById("q4").value;
-            var a5 = document.getElementById("q5").value;
+            var a1 = document.getElementById("q1").value.toLowerCase();
+            var a2 = document.getElementById("q2").value.toLowerCase();
+            var a3 = document.getElementById("q3").value.toLowerCase();
+            var a4 = document.getElementById("q4").value.toLowerCase();
+            var a5 = document.getElementById("q5").value.toLowerCase();
 
             if (validanswers.includes(a1) && validanswers.includes(a2) && validanswers.includes(a3) && validanswers.includes(a4) && validanswers.includes(a5) ) {
 
