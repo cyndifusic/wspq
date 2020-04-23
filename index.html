@@ -73,6 +73,13 @@
             <br><br><button id="submitquiz">Submit</button>
 
             <br><p id="results">Results:<br><br></p>
+
+            <br><span>Bonus quiz:</span>
+            <h2>Which Wii Series Game Should You Play?</h2>
+            <p>Click the button, and our advanced system will look into your mind to figure out which Wii Series game matches your current mood.</p>
+            <button id="submitgame">Analyze Me</button>
+
+            <h3 id="result2">Calculating...</h3><br>
         </div>
 
     </div>
@@ -81,7 +88,9 @@
     </div>
     <script>
         var submitbutton = document.getElementById("submitquiz");
+        var gamebutton = document.getElementById("submitgame");
         var results = document.getElementById("results");
+        var gameresult = document.getElementById("result2");
         var validanswers = ["a", "b", "c", "d"];
         var order = [];
         var ogws = 0;
@@ -226,7 +235,12 @@
             }
         }
 
+        var calculateGame = function() {
+            gameresult.innerHTML = "Wii Chess";
+        }
+
         submitbutton.addEventListener("click", calculateResults);
+        gamebutton.addEventListener("click", calculateGame);
     </script>
 </body>
 
